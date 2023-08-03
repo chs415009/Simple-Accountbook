@@ -98,7 +98,7 @@ __1.__ <br>
 
 __2.__ <br>
 <div style="display: flex;">
-  <img src="./bin/4 find result.png" width="500">
+  <img src="./bin/4 find result.png" width="630">
   <img src="./bin/4 find list.png" width="100">
 </div>
   
