@@ -1,120 +1,121 @@
-# Simple-Accountbook 
-Description: An account book application written in C#
-## Download:
-1. Click below!<br>
-https://github.com/chs415009/simple-accountbook.git <br>
+# Simple-Accountbook
 
-2. Open with Visual Studio by executing the "AccoutingAPP.sln" file.<br>
+![C#](https://img.shields.io/badge/C%23-.NET-blue.svg)
+![Platform](https://img.shields.io/badge/platform-Windows-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
+**Simple-Accountbook** is a comprehensive financial management application built with C# and .NET Framework. This desktop application provides a user-friendly interface to track expenses and income, categorize transactions, and manage your personal finances effectively.
 
-## Instructions:
-__This project allows you to record all your expenses and income with several functions.__ <br>
-~ The detailed procedures are shown below. ~ <br>
-<br>
+## 🌟 Features
 
-### --- Form 1 ----------
-* __The first form is for sign in/sign up.__
+- **Secure User Authentication**: Personal account system with username and password protection
+- **Intuitive Transaction Management**: Add, view, and delete financial records easily
+- **Hierarchical Category System**: Organized expense and income categories
+- **Date Selection**: Calendar interface for precise transaction dating
+- **Advanced Filtering**: View transactions by category with hierarchical search
+- **Data Persistence**: Automatic saving of transaction data between sessions
+- **Input Validation**: Intelligent handling of transaction amounts based on category type
 
-__1.__ <br>
-<img src="./bin/1.png" width="500">
+## 📥 Installation & Setup
 
-* The initial input of the username and password serves as the registration process. The system will check if this account exists.<br>
-If it doesn't, a prompt will appear asking whether to proceed with registration.<br>
-<br>
+### Prerequisites
+- Windows operating system
+- Visual Studio (2017 or later recommended)
+- .NET Framework 4.5+
 
-__2.__ <br>
-<div style="display: flex;">
-  <img src="./bin/1 no account.png" width="100">
-  <img src="./bin/1 no password.png" width="100">
-  <img src="./bin/1 no account password .png" width="100">
-  <img src="./bin/1 X password.png" width="100">
-</div>
+### Installation Steps
+1. Clone the repository:
+   ```
+   git clone https://github.com/chs415009/simple-accountbook.git
+   ```
+2. Open the solution file in Visual Studio:
+   ```
+   AccoutingAPP.sln
+   ```
+3. Build and run the application directly from Visual Studio
 
-* The system will automatically check if there are blank fields or incorrect passwords, as shown in the four images above. <br>
-<br>
+## 🚀 Application Workflow
 
-### --- Form 2 ----------
-* __The second form is the main page.__ <br>
-From left to right, the three buttons are: 離開-Exit, 新增-Add, 檢視-View.
+### User Authentication (Form 1)
+The application starts with a secure login interface:
 
-__1.__ <br>
-<img src="./bin/2.png" width="500">
+- **First-time users**: Enter your desired username and password to register
+- **Returning users**: Enter your credentials to access your account
+- **Validation**: The system checks for empty fields and correct password input
 
-* The "離開" button is for saving and exiting. When you click it, a confirmation prompt will appear. <br> 
-* The "新增" and "檢視" buttons will take you to "Form3" and "Form4" respectively. <br>
-(Form3 and Form4 are explained below)<br>
-<br>
+![Authentication Interface](./bin/1.png)
 
-__2.__ <br>
-<div style="display: flex;">
-  <img src="./bin/2 save.png" width="500">
-  <img src="./bin/2 X exit.png " width="500"> 
-</div>
+### Main Dashboard (Form 2)
+After successful authentication, you'll access the main dashboard with three primary functions:
 
-* If you click "Yes", it will successfully save and quit. <br>
-* If you click "No", it won't save and quit. Instead, it will display all records for your review.<br>
-<br>
+- **離開 (Exit)**: Save and close the application
+- **新增 (Add)**: Navigate to the transaction entry form
+- **檢視 (View)**: Navigate to the transaction viewing and management form
 
-### --- Form 3 ----------
-* __The third form is for adding new records.__
+![Main Dashboard](./bin/2.png)
 
-__1.__ <br>
-<img src="./bin/3.png" width="500">
+### Transaction Entry (Form 3)
+The transaction entry form allows you to add new financial records:
 
-* First, you can select the date at the top of the page.<br>
-** _You will need to select from year to day sequentially to correctly show the 29th, 30th, 31st. <br>
-Otherwise, there may be errors with the date_. **<br>
-<br>
+1. **Date Selection**: Choose year, month, and day sequentially for accurate dating
+2. **Category Selection**: Choose from hierarchical categories for expenses or income
+3. **Description**: Add details about your transaction
+4. **Amount**: Enter the transaction amount
+   - For expenses: Positive numbers are automatically converted to negative
+   - For income: Must be entered as positive numbers
 
-__2.__ <br>
-<img src="./bin/3 add.png" width="500">
+![Transaction Entry](./bin/3.png)
 
-* After you successfully add a new record, a message box will display the result.<br>
-<br>
+### Transaction Management (Form 4)
+The transaction management form provides comprehensive viewing and management capabilities:
 
-__3.__ <br>
-<img src="./bin/3 add list.png" width="500">
+1. **Transaction List**: View all transactions with details including category, description, amount, and date
+2. **Category Filtering**: Filter transactions by selecting categories from the hierarchical list
+3. **Deletion**: Select and remove individual transactions as needed
 
-* A second message box will appear after the first one, as shown above. <br>
-It displays all records added before leaving Form3.<br>
-<br>
+![Transaction Management](./bin/4.png)
 
-__4.__ <br>
-<img src="./bin/3 X money.png" width="500">
+## 💡 Tips & Best Practices
 
-* As shown in the image above, if the category of the record belongs to "income" and the money value is negative, <br>
-  it will show "金額輸入有誤!", which means wrong format for the money.
-* However, if you input a positive number while selecting categories belonging to "expense", it will automatically add a "-" sign.<br>
-<br>
+- **Date Selection**: Always select from year to day sequentially to ensure proper date handling
+- **Amount Entry**: 
+  - For expenses: You can enter either positive or negative numbers (positive will be converted to negative)
+  - For income: Always enter positive numbers
+- **Transaction Deletion**: Can only be performed one record at a time
+- **Exit Options**: 
+  - Select "Yes" to save and exit
+  - Select "No" to view all records before exiting without saving
 
-### --- Form 4 ----------
-* __The fourth form is for viewing and deleting records.__
+## 🔧 Technical Implementation
 
-__1.__ <br>
-<img src="./bin/4.png" width="500">
+- **Multi-form Architecture**: Structured application flow with dedicated forms for each function
+- **User Authentication System**: Secure account management
+- **Hierarchical Data Structures**: Efficient category organization
+- **Transaction Validation**: Intelligent handling of financial data
+- **UI/UX Design**: User-friendly interface with clear visual feedback
 
-* The list on the left side shows all records with information, including category, description, amount, and date.<br>
-<br>
+## 🛠️ Future Development Plans
 
-__2.__ <br>
-<div style="display: flex;">
-  <img src="./bin/4 find result.png" width="630">
-  <img src="./bin/4 find list.png" width="100">
-</div>
-  
-* The records on the right side can be filtered by the category you select in the "查詢" textbox. <br>
-  "-" Represents the hierarchy level of each category group. <br>
-  (Example: Selecting "交通" will show results including "汽油", "公車", "火車", "捷運", "其他(交")<br>
-<br>
+- Data visualization and reporting
+- Budget setting and tracking
+- Export functionality to CSV/Excel
+- Cloud synchronization
+- Mobile companion application
 
-__3.__ <br>
-<div style="display: flex;">
-  <img src="./bin/4 delete.png" width="400">
-  <img src="./bin/4 X delete.png" width="400">  
-</div>
+## 📜 License
 
-* To delete a record, select it on the right side and then click the "刪除" button. <br>
-  ** _You can only delete one record at a time._ **
-* If you click the button without selecting any records, a notification message box will appear. <br>
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Let's begin!
+## 👨‍💻 About the Developer
+
+Simple-Accountbook was developed to demonstrate proficiency in C# programming, Windows Forms application development, and software architecture design. The application showcases:
+
+- Object-oriented programming expertise
+- Database integration and management
+- User interface design principles
+- Multi-form application architecture
+- Security implementation for user data
+
+---
+
+**Simple-Accountbook** - Managing your finances with elegance and efficiency.
